@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WLCG GSoC Task Evaluator : Options</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script type= "text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="options.js"></script>
+    </head>
+    <body>
+        <div class="jumbotron text-center">
+        <h1>MOOC-CA</h1>
+        </div>
+        <div class="container">
+            <div class="panel-group">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <b>Server</b>
+                    </div>
+                    <div class="panel-body form-group">
+                        <form>    
+                            <label for="submit_url">Task Submission URL</label> 
+                            <input type="text" id="submit_url" class="form-control"></input></li>
+                        </form>
+                    </div>
+                </div>
+                <div class= "panel panel-info">
+                    <div class="panel-heading">
+                        <b>OAuth2 Client</b>
+                    </div>
+                
+                    <div class="panel-body form-group">
+                        <label for="auth_url">Authorization Endpoint</label> 
+                        <input type="text" id="auth_url" class="form-control"></input>
+                        <label for="token_url">Token Endpoint</label> 
+                        <input type="text" id="token_url" class="form-control"></input>
+                        <label for="refresh_token_url">Refresh Token Endpoint</label>
+                        <input type="text" id="refresh_token_url" class="form-control"></input>
+                        <label for="client_id">Client ID</label> 
+                        <input type="text" id="client_id" class="form-control"></input>
+                        <label for="client_secret">Client Secret</label>
+                        <input type="text" id="client_secret" class="form-control"></input>
+                        <label for= "refirect_uri">Redirect URI</label>
+                        <p id='redirect_uri'></p>          
+                    </div>
+                </div>
+                <div class = "panel panel-info">
+                    <div class="panel-heading">
+                        <b>OAuth2 Token</b>
+                    </div>
+                    <div class="panel-body form-group">
+                        <label for="token">Token</label>
+                        <input type="text" id="token"></input>        
+                    </div>
+                </div>
+
+        
+        <input type="submit" id="save" class="btn btn-primary" value="Save"></input>
+        <input type="button" id="oauth_flow" class="btn btn-info" value="Get New Token"></input>
+    </div>
+</div>
+    </body>
+</html>

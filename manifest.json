@@ -1,0 +1,78 @@
+{
+    "manifest_version": 2,
+  
+    "name": "MOOC-CA-WLCG",
+    "description": "Submit tasks and MOOC performances to evaluators for GSoC 2018 (Org - Project : HSF - WLCG)",
+    "version": "1.0.0",
+    "page_action": {
+     "default_icon": {
+       "16": "meta/icon-16.png",
+       "19": "meta/icon-19.png",
+       "32": "meta/icon-32.png",
+       "38": "meta/icon-38.png",
+       "48": "meta/icon-48.png",
+       "128": "meta/icon-128.png",
+       "512": "meta/icon-512.png"
+      },
+     "default_popup": "popup.html",
+     "default_title": "WLCG GSoC Task Manager"
+    },
+    "background":{
+      "scripts": ["js/jquery-3.3.1.min.js","background.js"],
+      "persistent": false
+    },
+
+    "permissions": [
+     "activeTab",
+     "tabs",
+     "background",
+     "storage",
+     "unlimitedStorage",
+     "identity",
+     "https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/progress",
+     "https://www.udemy.com/ansible-essentials-simplicity-in-automation/learn/v4/content",
+     "https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS101x+1T2017/progress",
+     "https://courses.edx.org/courses/course-v1:RedHat+DO081x+2T2017/progress",
+     "https://learn.puppet.com/user/learning/enrollments?type=completed",
+     "http://localhost:8000/*"
+     ],
+    "options_page": "options.html",
+    "content_scripts":[
+      {
+        "matches": 
+          [
+            "https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/progress",
+            "https://www.udemy.com/ansible-essentials-simplicity-in-automation/learn/v4/content",
+            "https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS101x+1T2017/progress",
+            "https://courses.edx.org/courses/course-v1:RedHat+DO081x+2T2017/progress",
+            "https://learn.puppet.com/user/learning/enrollments?type=completed"
+          ],
+        "js": ["js/jquery-3.3.1.min.js", "content_handlers/kubernetes_edx.js"],
+        "css": ["content_decorators/content.css"]
+      },
+      {
+        "matches": ["https://www.udemy.com/ansible-essentials-simplicity-in-automation/learn/v4/content"],
+        "js": ["js/jquery-3.3.1.min.js", "content_handlers/ansible_udemy.js"],
+        "css": ["content_decorators/content.css"]
+      },
+      {
+        "matches": ["https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS101x+1T2017/progress"],
+        "js": ["js/jquery-3.3.1.min.js", "content_handlers/linux_edx.js"],
+        "css": ["content_decorators/content.css"]
+      },
+      {
+        "matches": ["https://courses.edx.org/courses/course-v1:RedHat+DO081x+2T2017/progress"],
+        "js": ["js/jquery-3.3.1.min.js", "content_handlers/containers_edx.js"],
+        "css": ["content_decorators/content.css"]
+      },
+      {
+        "matches": ["https://learn.puppet.com/user/learning/enrollments?type=completed"],
+        "js": ["js/jquery-3.3.1.min.js", "content_handlers/puppet_puppet.js"],
+        "css": ["content_decorators/content.css"]
+      }
+    ],
+    "web_accessible_resources":[
+      "popup.html"
+    ]
+}
+
