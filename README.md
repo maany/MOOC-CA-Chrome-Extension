@@ -12,11 +12,11 @@ It is composed of a Chrome Extension and a Server. The evaluators publish their 
 
 This repository contains code and instructions for the MOOC-CA Chrome Extension.
 
+## MOOC-CA PPT
+Here is a [presentation](https://indico.cern.ch/event/742790/contributions/3198222/attachments/1748964/2832997/MOOC-CA.pdf) from CERN IT Lightning Talks #17 where MOOC-CA was presented on 8 Nov 2018.
+
 # MOOC-CA Chrome Extension
 Extension for chrome browser to validate that students have completed courses on MOOC platforms and online learning platforms.
-
-# MOOC-CA PPT
-Here is a [presentation](https://indico.cern.ch/event/742790/contributions/3198222/attachments/1748964/2832997/MOOC-CA.pdf) from CERN IT Lightning Talks #17 where MOOC-CA was presented on 8 Nov 2018.
 
 # Setup Instructions
 
