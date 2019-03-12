@@ -49,11 +49,12 @@ Let's say you want students to be able to submit their progress from the [Introd
 
 1. Find URL of the progress page that students should submit to you. In this example it is [here](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/progress).
 
-1. Copy the progress page URL into the permissions array in manifest.json
+1. Copy the progress page URL into the permissions array in manifest.json. Also add the fqdn of the server that hosts the MOOC-CA server to the same array.
     ```
     "permissions": [
      "activeTab",
      "https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/progress",
+     "my-mooc-ca-server.domain"
      "]
     ```
 1. Add a new object in the content scripts section of manifest.json. 
